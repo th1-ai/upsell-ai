@@ -1,0 +1,23 @@
+[
+  {"date": "2026-09-02", "room_type_id": "Deluxe Sea View", "price": 340, "currency": "EUR", "min_los": 1, "available": 4},
+  {"date": "2026-09-04", "room_type_id": "Deluxe Sea View", "price": 340, "currency": "EUR", "min_los": 1, "available": 4},
+  {"date": "2026-09-05", "room_type_id": "Deluxe Sea View", "price": 340, "currency": "EUR", "min_los": 1, "available": 4},
+  {"date": "2026-09-07", "room_type_id": "Deluxe Sea View", "price": 340, "currency": "EUR", "min_los": 1, "available": 3},
+  {"date": "2026-09-08", "room_type_id": "Deluxe Sea View", "price": 340, "currency": "EUR", "min_los": 1, "available": 3},
+  {"date": "2026-09-09", "room_type_id": "Deluxe Sea View", "price": 340, "currency": "EUR", "min_los": 1, "available": 3},
+  {"date": "2026-09-10", "room_type_id": "Deluxe Sea View", "price": 340, "currency": "EUR", "min_los": 1, "available": 3},
+  {"date": "2026-09-11", "room_type_id": "Deluxe Sea View", "price": 340, "currency": "EUR", "min_los": 1, "available": 3},
+  {"date": "2026-09-13", "room_type_id": "Deluxe Sea View", "price": 340, "currency": "EUR", "min_los": 1, "available": 2},
+  {"date": "2026-09-14", "room_type_id": "Deluxe Sea View", "price": 340, "currency": "EUR", "min_los": 1, "available": 2},
+  {"date": "2026-09-15", "room_type_id": "Deluxe Sea View", "price": 340, "currency": "EUR", "min_los": 1, "available": 0},
+
+  {"date": "2026-09-08", "room_type_id": "Junior Suite", "price": 480, "currency": "EUR", "min_los": 1, "available": 2},
+  {"date": "2026-09-09", "room_type_id": "Junior Suite", "price": 480, "currency": "EUR", "min_los": 1, "available": 2},
+  {"date": "2026-09-10", "room_type_id": "Junior Suite", "price": 480, "currency": "EUR", "min_los": 1, "available": 2},
+  {"date": "2026-09-11", "room_type_id": "Junior Suite", "price": 480, "currency": "EUR", "min_los": 1, "available": 2},
+  {"date": "2026-09-12", "room_type_id": "Junior Suite", "price": 480, "currency": "EUR", "min_los": 1, "available": 2},
+
+  {"date": "2026-09-09", "room_type_id": "Meridian Suite", "price": 780, "currency": "EUR", "min_los": 1, "available": 1},
+  {"date": "2026-09-10", "room_type_id": "Meridian Suite", "price": 780, "currency": "EUR", "min_los": 1, "available": 1},
+  {"date": "2026-09-11", "room_type_id": "Meridian Suite", "price": 780, "currency": "EUR", "min_los": 1, "available": 1}
+]

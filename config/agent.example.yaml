@@ -1,0 +1,151 @@
+# ---------------------------------------------------------------------------
+# agent.yaml - Upsell AI's own knobs. `make setup` copies this to
+# config/agent.yaml; edit that copy, this example stays as a clean reference.
+#
+# Two tracks, both on by default - see docs/sub-agents.md for why. Each has
+# its own block below. `offers:` is the catalogue Track A sells from; edit it
+# whenever your amenities or prices change, no code involved.
+# ---------------------------------------------------------------------------
+
+# Which of pms/email/messaging this agent actually reads from - email is
+# send-only (a human handles guest replies via `tools/outreach.py respond` /
+# `tools/upgrade.py respond`, this agent never calls fetch_unread/fetch_thread
+# itself), and messaging is never used at all. Keeps `make run`'s SAMPLE DATA
+# warning honest when `systems.email.adapter` is left as `mock`. See
+# core/adapters/__init__.py:_systems_used.
+systems_used: [pms]
+
+subagents:
+  pre_arrival_outreach:      # Track A - "The Welcomer"
+    enabled: true
+    outreach_window_days: 21       # roster: "7-21 days out"
+    min_days_before_arrival: 0     # see docs/how-it-works.md "Design decisions" #2 -
+                                    # set to 7 if you want the roster's lower bound enforced
+    checkin_link_days: 7           # mention the digital check-in link inside this many days
+    rank_vip_first: true
+    match_profile: true            # off = everyone gets the two generic offers only
+    price_guard: true
+    price_guard_share: 0.4         # an offer can't cost more than this share of the
+                                    # guest's own nightly rate (reservation.total / nights)
+    max_paid_offers: 2
+    max_repeat_offers: 2           # guard-exempt: offers the guest has bought before
+
+  room_upgrade:               # Track B - "The Closer"
+    enabled: true
+    room_ladder:                    # low to top; edit to match your own room types exactly
+      - "Classic Room"
+      - "Deluxe Sea View"
+      - "Junior Suite"
+      - "Meridian Suite"
+    window_days: 14
+    upgrade_factor: 0.55            # surcharge = round_to_5((target rate - guest's own rate) * this)
+    surcharge_band:
+      min: 10                       # both ends enforced - see docs/how-it-works.md #4
+      max: 100
+    group_exclude: true             # never offer an upgrade on a Group-channel booking
+    offer_valid_hours: 72           # unanswered offers go stale after this long
+    auto_confirm: false             # true + mode:live still needs pms_write approved unless
+                                     # you remove it from review.require_approval_for
+
+coach:
+  enabled: true                     # Email Optimizer / Coach AI applies to this agent
+
+# The catalogue Track A sells from. price_unit: one-off | per person | per day.
+# match_keys drive the profile matcher - see docs/how-it-works.md step 6.
+offers:
+  - id: of-welcome-table
+    title: "Welcome Amenity Table"
+    price: 0
+    price_unit: one-off
+    margin_pct: 0
+    match_keys: []
+  - id: of-transfer
+    title: "Private Airport Transfer"
+    price: 65
+    price_unit: one-off
+    margin_pct: 35
+    match_keys: [transfer]
+  - id: of-spa-morning
+    title: "Spa Morning Ritual"
+    price: 95
+    price_unit: one-off
+    margin_pct: 55
+    match_keys: [spa]
+  - id: of-late-checkout
+    title: "Late Checkout (2pm)"
+    price: 45
+    price_unit: one-off
+    margin_pct: 90
+    match_keys: [returning, vip]
+  - id: of-veg-tasting
+    title: "Vegetarian Tasting Menu"
+    price: 150
+    price_unit: one-off
+    margin_pct: 40
+    match_keys: [vegetarian]
+  - id: of-chefs-table
+    title: "Chef's Table Experience"
+    price: 180
+    price_unit: per person
+    margin_pct: 45
+    match_keys: [vip, returning, anniversary]
+  - id: of-cabana
+    title: "Private Cabana Day Pass"
+    price: 120
+    price_unit: per day
+    margin_pct: 60
+    match_keys: [vip, honeymoon]
+  - id: of-pet-package
+    title: "Pet Welcome Package"
+    price: 40
+    price_unit: one-off
+    margin_pct: 70
+    match_keys: [dog]
+  - id: of-dog-sitting
+    title: "Pet-Sitting While You Spa"
+    price: 72
+    price_unit: one-off
+    margin_pct: 50
+    match_keys: [dog, spa]
+  - id: of-babysitting
+    title: "Evening Babysitting (2 hrs)"
+    price: 60
+    price_unit: one-off
+    margin_pct: 50
+    match_keys: [baby, family]
+  - id: of-couples-ritual
+    title: "Couples' Spa Ritual"
+    price: 190
+    price_unit: one-off
+    margin_pct: 55
+    match_keys: [couples, anniversary, honeymoon]
+  - id: of-sparkling-flowers
+    title: "Sparkling Wine & Flowers in Room"
+    price: 55
+    price_unit: one-off
+    margin_pct: 65
+    match_keys: [anniversary, honeymoon, couples, birthday]
+  - id: of-cellar-dinner
+    title: "Cellar Wine Dinner"
+    price: 240
+    price_unit: one-off
+    margin_pct: 40
+    match_keys: [anniversary, honeymoon, vip]
+
+# How often `tools/run.py --watch` polls, and what `make schedule ARGS="--all"`
+# prints, one job per entry, command and all. See scheduler/ for
+# cron/launchd/systemd; `make schedule` (no --all) prints just the first job.
+schedule:
+  outreach:
+    command: "tools/run.py --once --only outreach"
+    cadence: "0 7 * * *"        # every morning at 07:00
+  upgrade_scan:
+    command: "tools/run.py --once --only upgrade"
+    cadence: "0 7 * * *"
+  expiry_sweep:
+    command: "tools/upgrade.py sweep-expired"
+    cadence: "0 8 * * *"
+  coach:
+    command: "tools/coach.py run"
+    cadence: "0 6 * * 1"        # Monday mornings
+poll_seconds: 3600

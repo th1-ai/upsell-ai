@@ -1,0 +1,151 @@
+[
+  {
+    "id": "res-101", "external_ref": "HA-1101", "status": "confirmed",
+    "check_in": "2026-09-17", "check_out": "2026-09-21",
+    "room_type_id": "Meridian Suite", "room_type_name": "Meridian Suite",
+    "adults": 2, "children": 0, "source": "Direct", "total": 3120, "currency": "EUR",
+    "guest": {"first_name": "Elena", "last_name": "Kovacs",
+              "email": "elena.kovacs@example.com", "phone": "+1-555-0101",
+              "country": "HU", "language": "en", "vip": true},
+    "tier": "vip", "vip_score": 96, "occasion": null, "tags": [],
+    "profile": {},
+    "history": [{"when": "last spring", "ref": "res-044",
+                "upsells_taken": ["Chef's Table Experience", "Private Cabana Day Pass"]}]
+  },
+  {
+    "id": "res-102", "external_ref": "HA-1102", "status": "confirmed",
+    "check_in": "2026-09-08", "check_out": "2026-09-11",
+    "room_type_id": "Deluxe Sea View", "room_type_name": "Deluxe Sea View",
+    "adults": 2, "children": 0, "source": "Direct", "total": 1020, "currency": "EUR",
+    "guest": {"first_name": "Marcus", "last_name": "Tan",
+              "email": "marcus.tan@example.com", "phone": "+1-555-0102",
+              "country": "SG", "language": "en", "vip": false},
+    "tier": "returning", "vip_score": 78, "occasion": null, "tags": [],
+    "profile": {"dog": "Baxter, a dachshund - needs a ground-floor room",
+               "spa": "asked about the spa morning ritual before arriving"},
+    "history": [{"when": "last winter", "ref": "res-030",
+                "upsells_taken": ["Pet Welcome Package"]}]
+  },
+  {
+    "id": "res-103", "external_ref": "HA-1103", "status": "confirmed",
+    "check_in": "2026-09-13", "check_out": "2026-09-15",
+    "room_type_id": "Classic Room", "room_type_name": "Classic Room",
+    "adults": 2, "children": 0, "source": "Booking.com", "total": 520, "currency": "EUR",
+    "guest": {"first_name": "Priya", "last_name": "Anand",
+              "email": "priya.anand@example.com", "phone": "+1-555-0103",
+              "country": "IN", "language": "en", "vip": false},
+    "tier": "first_stay", "vip_score": 20, "occasion": null, "tags": [],
+    "profile": {}, "history": []
+  },
+  {
+    "id": "res-104", "external_ref": "HA-1104", "status": "confirmed",
+    "check_in": "2026-09-04", "check_out": "2026-09-06",
+    "room_type_id": "Classic Room", "room_type_name": "Classic Room",
+    "adults": 2, "children": 0, "source": "Direct", "total": 520, "currency": "EUR",
+    "guest": {"first_name": "Tom", "last_name": "Whitfield",
+              "email": "tom.whitfield@example.com", "phone": "+1-555-0104",
+              "country": "GB", "language": "en", "vip": false},
+    "tier": "first_stay", "vip_score": 15, "occasion": null, "tags": [],
+    "profile": {}, "history": []
+  },
+  {
+    "id": "res-105", "external_ref": "HA-1105", "status": "confirmed",
+    "check_in": "2026-09-07", "check_out": "2026-09-12",
+    "room_type_id": "Classic Room", "room_type_name": "Classic Room",
+    "adults": 2, "children": 0, "source": "Direct", "total": 1300, "currency": "EUR",
+    "guest": {"first_name": "Sara", "last_name": "Lindqvist",
+              "email": "sara.lindqvist@example.com", "phone": "+1-555-0105",
+              "country": "SE", "language": "en", "vip": false},
+    "tier": "first_stay", "vip_score": 30, "occasion": "anniversary", "tags": [],
+    "profile": {}, "history": []
+  },
+  {
+    "id": "res-106", "external_ref": "HA-1106", "status": "confirmed",
+    "check_in": "2026-09-09", "check_out": "2026-09-12",
+    "room_type_id": "Junior Suite", "room_type_name": "Junior Suite",
+    "adults": 2, "children": 0, "source": "Expedia", "total": 1440, "currency": "EUR",
+    "guest": {"first_name": "Amara", "last_name": "Osei",
+              "email": "amara.osei@example.com", "phone": "+1-555-0106",
+              "country": "GH", "language": "en", "vip": false},
+    "tier": "first_stay", "vip_score": 40, "occasion": "honeymoon", "tags": [],
+    "profile": {}, "history": []
+  },
+  {
+    "id": "res-107", "external_ref": "HA-1107", "status": "confirmed",
+    "check_in": "2026-09-06", "check_out": "2026-09-08",
+    "room_type_id": "Classic Room", "room_type_name": "Classic Room",
+    "adults": 2, "children": 0, "source": "Group", "total": 520, "currency": "EUR",
+    "guest": {"first_name": "Coastal Tours", "last_name": "Group Desk",
+              "email": "groups@example.com", "phone": "+1-555-0107",
+              "country": "PT", "language": "en", "vip": false},
+    "tier": null, "vip_score": 0, "occasion": null, "tags": [],
+    "profile": {}, "history": []
+  },
+  {
+    "id": "res-108", "external_ref": "HA-1108", "status": "confirmed",
+    "check_in": "2026-09-14", "check_out": "2026-09-16",
+    "room_type_id": "Classic Room", "room_type_name": "Classic Room",
+    "adults": 2, "children": 0, "source": "Direct", "total": 520, "currency": "EUR",
+    "guest": {"first_name": "Henrik", "last_name": "Berg",
+              "email": "henrik.berg@example.com", "phone": "+1-555-0108",
+              "country": "NO", "language": "en", "vip": false},
+    "tier": "first_stay", "vip_score": 25, "occasion": null, "tags": [],
+    "profile": {}, "history": []
+  },
+  {
+    "id": "res-109", "external_ref": "HA-1109", "status": "confirmed",
+    "check_in": "2026-09-21", "check_out": "2026-09-24",
+    "room_type_id": "Classic Room", "room_type_name": "Classic Room",
+    "adults": 2, "children": 0, "source": "Direct", "total": 780, "currency": "EUR",
+    "guest": {"first_name": "Lucia", "last_name": "Fontaine",
+              "email": "lucia.fontaine@example.com", "phone": "+1-555-0109",
+              "country": "FR", "language": "en", "vip": false},
+    "tier": "first_stay", "vip_score": 18, "occasion": null, "tags": [],
+    "profile": {}, "history": []
+  },
+  {
+    "id": "res-110", "external_ref": "HA-1110", "status": "confirmed",
+    "check_in": "2026-09-10", "check_out": "2026-09-13",
+    "room_type_id": "Deluxe Sea View", "room_type_name": "Deluxe Sea View",
+    "adults": 2, "children": 2, "source": "Direct", "total": 1020, "currency": "EUR",
+    "guest": {"first_name": "Petra", "last_name": "Novak",
+              "email": "petra.novak@example.com", "phone": "+1-555-0110",
+              "country": "CZ", "language": "en", "vip": false},
+    "tier": "first_stay", "vip_score": 22, "occasion": null,
+    "tags": [], "party": "2 adults, 2 children", "family_name": "Novak",
+    "profile": {"kids": "Two children, ages 6 and 9, love the pool"}, "history": []
+  },
+  {
+    "id": "res-111", "external_ref": "HA-1111", "status": "confirmed",
+    "check_in": "2026-09-11", "check_out": "2026-09-15",
+    "room_type_id": "Meridian Suite", "room_type_name": "Meridian Suite",
+    "adults": 2, "children": 0, "source": "Direct", "total": 3120, "currency": "EUR",
+    "guest": {"first_name": "Eleanor", "last_name": "Whitcombe",
+              "email": "eleanor.whitcombe@example.com", "phone": "+1-555-0111",
+              "country": "GB", "language": "en", "vip": true},
+    "tier": "vip", "vip_score": 90, "occasion": null, "tags": [],
+    "outreach_status": "already_sent", "profile": {}, "history": []
+  },
+  {
+    "id": "res-112", "external_ref": "HA-1112", "status": "confirmed",
+    "check_in": "2026-09-02", "check_out": "2026-09-03",
+    "room_type_id": "Classic Room", "room_type_name": "Classic Room",
+    "adults": 1, "children": 0, "source": "Direct", "total": 260, "currency": "EUR",
+    "guest": {"first_name": "Jamie", "last_name": "Ortiz",
+              "email": "jamie.ortiz@example.com", "phone": "+1-555-0112",
+              "country": "US", "language": "en", "vip": false},
+    "tier": "first_stay", "vip_score": 10, "occasion": null, "tags": [],
+    "profile": {}, "history": []
+  },
+  {
+    "id": "res-113", "external_ref": "HA-1113", "status": "confirmed",
+    "check_in": "2026-08-30", "check_out": "2026-09-05",
+    "room_type_id": "Classic Room", "room_type_name": "Classic Room",
+    "adults": 2, "children": 0, "source": "Direct", "total": 1560, "currency": "EUR",
+    "guest": {"first_name": "Noor", "last_name": "Haddad",
+              "email": "noor.haddad@example.com", "phone": "+1-555-0113",
+              "country": "AE", "language": "en", "vip": false},
+    "tier": "returning", "vip_score": 35, "occasion": null, "tags": [],
+    "profile": {}, "history": []
+  }
+]

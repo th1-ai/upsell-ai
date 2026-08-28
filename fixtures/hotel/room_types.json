@@ -1,0 +1,6 @@
+[
+  {"id": "Classic Room", "name": "Classic Room", "max_occupancy": 2, "count": 15, "rank": 0},
+  {"id": "Deluxe Sea View", "name": "Deluxe Sea View", "max_occupancy": 3, "count": 12, "rank": 1},
+  {"id": "Junior Suite", "name": "Junior Suite", "max_occupancy": 4, "count": 8, "rank": 2},
+  {"id": "Meridian Suite", "name": "Meridian Suite", "max_occupancy": 4, "count": 7, "rank": 3}
+]
